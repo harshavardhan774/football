@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git clone') {
+            steps {
+       git url: 'https://github.com/harshavardhan774/football.git',  branch: 'main'
+
+            }
+        }
+          stage('deploy') {
+            steps {
+                 sh 'cp * /var/www/html/'
+                
+            }
